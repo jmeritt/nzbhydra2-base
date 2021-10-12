@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nzbhydra2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nzbhydra2
@@ -20,6 +20,14 @@ spec:
         app: nzbhydra2
     spec:
       initContainers:
+      - name: copy-config
+        image: busybox
+        command: ['/bin/sh', '-c', 'cp /config-src/*.yml /config/nzbhydra.yml']
+        volumeMounts:
+        - name: data
+          mountPath: /config
+        - name: config-src
+          mountPath: /config-src
       - name: init-priveleges-config
         image: busybox
         command:
@@ -32,14 +40,6 @@ spec:
         volumeMounts:
         - name: data
           mountPath: /config
-      - name: copy-config
-        image: busybox
-        command: ['/bin/sh', '-c', 'cp /config-src/*.yml /config/nzbhydra.yml']
-        volumeMounts:
-        - name: data
-          mountPath: /config
-        - name: config-src
-          mountPath: /config-src
       containers:
       - name: nzbhydra2
         image: jmeritt/nzbhydra2

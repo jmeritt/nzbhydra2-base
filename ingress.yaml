@@ -1,16 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nzbhydra2
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: public
 spec:
   rules:
   - host: nzbhydra2.local
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: nzbhydra2
-          servicePort: 5076
-  
+          service:
+            name: nzbhydra2
+            port:
+              number: 5076
