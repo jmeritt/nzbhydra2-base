@@ -1,5 +1,0 @@
-2019-07-17 11:25:05,607  INFO - No file nzbhydra.yml found. Using 256M XMX
-2019-07-17 11:25:05,749  INFO - Determined java version as '11' from version string 'openjdk version "11.0.3" 2019-04-16'
-2019-07-17 11:25:05,753  INFO - Starting NZBHydra main process with command line: java -Xmx256M -DfromWrapper -XX:TieredStopAtLevel=1 -noverify -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/logs -Xlog:gc*:file=../../../data/logs/gclog-2019-07-17_11-25-05.log::filecount=10,filesize=5000 -Dspring.output.ansi.enabled=ALWAYS -jar /home/htpc/nzbhydra2/lib/core-2.6.11-exec.jar --nobrowser --datafolder /data in folder /home/htpc/nzbhydra2
-2019-07-17 15:44:21,409  INFO - Terminated by signal 2
-2019-07-17 15:44:21,414  INFO - NZBHydra2 wrapper shutdown request. Terminating main process gracefully
