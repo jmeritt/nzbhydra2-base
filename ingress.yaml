@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: nzbhydra2
   annotations:
-    kubernetes.io/ingress.class: public
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
   - host: nzbhydra2.local
