@@ -1,4 +1,4 @@
-FROM jmeritt/debian-htpc
+FROM jmeritt/ubuntu-htpc
 
 RUN apt-get update &&\
 	apt-get install -y openjdk-11-jdk unzip
