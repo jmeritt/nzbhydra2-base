@@ -4,7 +4,7 @@ RUN apt-get update &&\
 	apt-get install -y openjdk-11-jdk unzip
 
 USER htpc
-ENV VER=3.17.3
+ENV VER=3.18.4
 
 RUN mkdir ~/nzbhydra2 && \
 cd ~/nzbhydra2 && \
